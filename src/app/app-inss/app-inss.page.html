@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>App INSS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">app-inss</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item class="padding-start padding ion-margin-top">
+    <ion-input label="Valor Hora-Aula: R$ " type="number" [(ngModel)]="valorHoraAula"></ion-input>
+  </ion-item>
+
+  <ion-item class="padding-start padding ion-margin-top">
+    <ion-input label="Aulas no mês: " type="number" [(ngModel)]="aulasMes"></ion-input>
+  </ion-item>
+
+  <ion-item class="padding-start padding ion-margin-top">
+    <ion-input label="Desconto INSS: (%)" type="number" [(ngModel)]="descontoInss"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" class="padding padding-start ion-margin-top" color="success" (click)="calcularSalario()">
+    Calcular
+  </ion-button>
+
+  <ion-item class="ion-margin-top">
+    <ion-label>
+      Salário Líquido:
+      <h1 class="ion-text-center"> R$ {{salarioLiquido}} </h1>
+    </ion-label>
+  </ion-item>
+
+</ion-content>
